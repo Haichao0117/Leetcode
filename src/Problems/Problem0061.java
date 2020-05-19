@@ -3,7 +3,7 @@ package Problems;
 /**
  * @Project: leetcode
  * @Package: Problems
- * @Description:
+ * @Description: Given a linked list, rotate the list to the right by k places, where k is non-negative.
  * @Author: Wang Haichao
  * @CreateTime: 2020/5/19 17:38
  **/
