@@ -1,5 +1,9 @@
 package Problems;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+
 /**
  * @Project: leetcode
  * @Package: Problems
@@ -10,5 +14,23 @@ package Problems;
  * @CreateTime: 2020/5/20 17:59
  **/
 public class Problem0202 {
+    public boolean isHappy(int n) {
+        HashSet<Integer> hs = new HashSet<>();
 
+        while(!hs.contains(n)){
+            if(n == 1) return true;
+            hs.add(n);
+            n = getNext(n);
+        }
+        return false;
+    }
+    public int getNext(int n){
+        int next = 0;
+        while(n != 0){
+            int d = n%10;
+            next += d*d;
+            n = n/10;
+        }
+        return next;
+    }
 }
