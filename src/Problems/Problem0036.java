@@ -32,7 +32,7 @@ public class Problem0036 {
         return true;
     }
 
-    private void woshishabi(char[][] board) {
+    private boolean woshishabi(char[][] board) {
         //HashSet<Character> sudoku = new HashSet<>();
         for(int i = 0; i < board.length; i++){
             HashSet<Character> sudoku = new HashSet<>();
@@ -53,5 +53,6 @@ public class Problem0036 {
                 }
             }
         }
+        return true;
     }
 }
