@@ -6,12 +6,29 @@ import java.util.List;
 /**
  * @Project: leetcode
  * @Package: Problems
- * @Description:
+ * @Description: qianxu bianli
  * @Author: Wang Haichao
  * @CreateTime: 2020/6/4 18:27
  **/
 public class Problem0144 {
     public List<Integer> preorderTraversal(TreeNode root) {
+        //return version1(root);
+        LinkedList<Integer> res = new LinkedList<>();
+        LinkedList<TreeNode> stack = new LinkedList<>();
+        TreeNode cur = root;
+        while (cur != null || !stack.isEmpty()){
+            while (cur != null){
+                res.add(cur.val);
+                stack.push(cur);
+                cur = cur.left;
+            }
+            cur = stack.pop();
+            cur = cur.right;
+        }
+        return res;
+    }
+
+    private List<Integer> version1(TreeNode root) {
         LinkedList<Integer> res = new LinkedList<>();
         LinkedList<TreeNode> stack = new LinkedList<>();
         if(root == null) return res;
