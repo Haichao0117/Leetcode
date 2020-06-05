@@ -1,9 +1,6 @@
 package Problems;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * @Project: leetcode
@@ -15,6 +12,20 @@ import java.util.List;
 public class Problem0145 {
     public List<Integer> postorderTraversal(TreeNode root) {
         //return version1(root);
+        //return IterateVersion1(root);
+        List<Integer> res = new ArrayList<>();
+        postorderTraversalHelper(root,res);
+        return res;
+    }
+
+    private void postorderTraversalHelper(TreeNode root, List<Integer> list){
+        if(root == null) return;
+        postorderTraversalHelper(root.left,list);
+        postorderTraversalHelper(root.right,list);
+        list.add(root.val);
+    }
+
+    private List<Integer> IterateVersion1(TreeNode root) {
         LinkedList<Integer> res = new LinkedList<>();
         LinkedList<TreeNode> stack = new LinkedList<>();
         TreeNode cur = root;
@@ -46,7 +57,7 @@ public class Problem0145 {
     * @CreateTime: 2020/6/4 23:34
     * @Version: version1.0
     **/
-    private List<Integer> version1(TreeNode root) {
+    private List<Integer> IterateVersion2(TreeNode root) {
         LinkedList<Integer> res = new LinkedList<>();
         LinkedList<TreeNode> stack = new LinkedList<>();
         TreeNode cur = root;

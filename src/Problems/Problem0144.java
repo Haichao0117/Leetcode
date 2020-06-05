@@ -1,5 +1,6 @@
 package Problems;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -13,6 +14,20 @@ import java.util.List;
 public class Problem0144 {
     public List<Integer> preorderTraversal(TreeNode root) {
         //return version1(root);
+        //return IterateVersion1(root);
+        List<Integer> res = new ArrayList<>();
+        preorderTraversalHelper(root,res);
+        return res;
+    }
+
+    private void preorderTraversalHelper(TreeNode root, List<Integer> list){
+        if(root == null) return;
+        list.add(root.val);
+        preorderTraversalHelper(root.left,list);
+        preorderTraversalHelper(root.right,list);
+    }
+
+    private List<Integer> IterateVersion1(TreeNode root) {
         LinkedList<Integer> res = new LinkedList<>();
         LinkedList<TreeNode> stack = new LinkedList<>();
         TreeNode cur = root;
