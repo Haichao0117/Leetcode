@@ -5,7 +5,7 @@ import java.util.HashMap;
 /**
  * @Project: leetcode
  * @Package: Problems
- * @Description:
+ * @Description: Given inorder and postorder traversal of a tree, construct the binary tree.
  * @Author: Wang Haichao
  * @CreateTime: 2020/6/9 23:19
  **/
